@@ -15,7 +15,8 @@
     "lint": "eslint --fix .",
     "lint-check": "eslint .",
     "test": "vitest",
-    "coverage": "vitest --coverage"
+    "coverage": "vitest --coverage",
+    "type-check": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
