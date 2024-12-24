@@ -15,7 +15,12 @@ concurrency:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [latest, 18, 20, 22]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     permissions:
       contents: write
       pull-requests: write
@@ -31,7 +36,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
       - name: Install dependencies
@@ -50,6 +55,7 @@ jobs:
         run: pnpm run coverage
 
       - name: Report Coverage
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == 'latest'
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           comment-on: "pr,commit"
