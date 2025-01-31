@@ -40,14 +40,14 @@
     "@eslint/js": "^9.19.0",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^22.12.0",
-    "@vitest/coverage-istanbul": "^2.1.8",
+    "@vitest/coverage-istanbul": "^3.0.4",
     "eslint": "^9.19.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.22.0",
-    "vitest": "^2.1.8",
+    "vitest": "^3.0.4",
     "wrangler": "^3.107.0"
   },
   "lint-staged": {
